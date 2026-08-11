@@ -61,7 +61,7 @@ hero:{
 
     buttonText:"Open Gallery ❤️",
 
-    image:"Assets/Images/img1.png"
+    image:"img1.png"
 
 },
 
@@ -81,17 +81,17 @@ gallery:{
 
     images:[
 
-        "Assets/Images/img2.png",
+        "img2.png",
 
-        "Assets/Images/img3.png",
+        "img3.png",
 
-        "Assets/Images/img4.png",
+        "img4.png",
 
-        "Assets/Images/img5.png",
+        "img5.png",
 
-        "Assets/Images/img6.png",
+        "img6.png",
 
-        "Assets/Images/img7.png"
+        "img7.png"
 
     ]
 
