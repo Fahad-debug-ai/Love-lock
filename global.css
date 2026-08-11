@@ -1,0 +1,53 @@
+/* ======================================================
+   GLOBAL RESET
+====================================================== */
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--gradient-background);
+    color:var(--text-body);
+    font-family:"Inter",sans-serif;
+    overflow-x:hidden;
+    min-height:100vh;
+}
+
+img{
+    display:block;
+    max-width:100%;
+}
+
+button,
+input{
+    font:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+ul{
+    list-style:none;
+}
+
+/* ======================================================
+   COMMON CONTAINER
+====================================================== */
+.container{
+    width:min(92%,1200px);
+    margin-inline:auto;
+}

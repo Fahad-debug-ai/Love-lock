@@ -1,0 +1,75 @@
+/* ======================================================
+   PROPOSAL TEMPLATE DESIGN SYSTEM
+   File: variables.css
+   Version: 2.0
+====================================================== */
+:root{
+    /* ===========================
+       PRIMARY COLORS
+    ============================ */
+    --color-bg:#090E1A;
+    --color-surface:#131C2E;
+    --color-card:rgba(255,255,255,.08);
+
+    /* ===========================
+       BRAND COLORS
+    ============================ */
+    --color-pink:#FF4D8D;
+    --color-purple:#8B5CF6;
+    --color-blue:#4F8CFF;
+    --color-gold:#FFD166;
+
+    /* ===========================
+       TEXT COLORS
+    ============================ */
+    --text-heading:#F8FAFC;
+    --text-body:#D6D9E3;
+    --text-muted:#A7B0C2;
+
+    /* ===========================
+       BORDER
+    ============================ */
+    --border-color:rgba(255,255,255,.12);
+
+    /* ===========================
+       GLASS
+    ============================ */
+    --glass-bg:rgba(255,255,255,.08);
+    --glass-border:rgba(255,255,255,.12);
+    --glass-shadow:
+        0 25px 60px rgba(0,0,0,.30);
+
+    /* ===========================
+       GRADIENTS
+    ============================ */
+    --gradient-primary:
+        linear-gradient(
+            135deg,
+            #FF4D8D 0%,
+            #8B5CF6 55%,
+            #4F8CFF 100%
+        );
+
+    --gradient-background:
+        linear-gradient(
+            135deg,
+            #090E1A,
+            #111827,
+            #1D2740
+        );
+
+    /* ===========================
+       BORDER RADIUS
+    ============================ */
+    --radius-sm:12px;
+    --radius-md:20px;
+    --radius-lg:32px;
+    --radius-full:999px;
+
+    /* ===========================
+       TRANSITIONS
+    ============================ */
+    --transition-fast:.25s ease;
+    --transition-normal:.4s ease;
+    --transition-slow:.8s ease;
+}

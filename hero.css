@@ -1,0 +1,732 @@
+/*=========================================================
+    HERO SECTION
+=========================================================*/
+#hero{
+    position:relative;
+    width:100%;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    background:linear-gradient(
+        135deg,
+        #0f172a,
+        #1e293b,
+        #111827
+    );
+    padding:120px 0;
+}
+
+/*=========================================================
+    BACKGROUND
+=========================================================*/
+.hero-background{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+    z-index:1;
+}
+
+.hero-gradient{
+    position:absolute;
+    inset:0;
+    background:
+    radial-gradient(circle at top left,
+    rgba(255,80,170,.18),
+    transparent 45%),
+    radial-gradient(circle at bottom right,
+    rgba(120,150,255,.18),
+    transparent 45%);
+}
+
+/*=========================================================
+    GLOW
+=========================================================*/
+.hero-glow{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(90px);
+    opacity:.45;
+}
+
+.glow-1{
+    width:300px;
+    height:300px;
+    background:#ff5fa2;
+    top:-80px;
+    left:-80px;
+}
+
+.glow-2{
+    width:350px;
+    height:350px;
+    background:#7c6cff;
+    right:-120px;
+    top:120px;
+}
+
+.glow-3{
+    width:260px;
+    height:260px;
+    background:#5ecbff;
+    bottom:-80px;
+    left:40%;
+}
+
+/*=========================================================
+    CONTAINER
+=========================================================*/
+.hero-wrapper{
+    position:relative;
+    z-index:5;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:70px;
+    width:100%;
+}
+
+/*=========================================================
+    HERO CONTENT
+=========================================================*/
+.hero-content{
+    flex:1;
+    max-width:620px;
+}
+
+.hero-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:10px 22px;
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:50px;
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(15px);
+    color:#ffd6e8;
+    font-size:.95rem;
+    font-weight:600;
+    margin-bottom:25px;
+}
+
+.hero-title{
+    font-size:4rem;
+    line-height:1.15;
+    font-weight:800;
+    color:#ffffff;
+    margin-bottom:20px;
+}
+
+.hero-title .girl-name{
+    display:block;
+    margin-top:10px;
+    color:#ff6fae;
+    text-shadow:
+        0 0 15px rgba(255,111,174,.45);
+}
+
+.hero-description{
+    max-width:540px;
+    font-size:1.08rem;
+    line-height:1.9;
+    color:rgba(255,255,255,.78);
+    margin-bottom:40px;
+}
+
+/*=========================================================
+    HERO BUTTON
+=========================================================*/
+.hero-button{
+    border:none;
+    outline:none;
+    cursor:pointer;
+    padding:16px 38px;
+    border-radius:60px;
+    font-size:1rem;
+    font-weight:700;
+    color:#fff;
+    background:linear-gradient(
+        135deg,
+        #ff5fa2,
+        #ff8ac5
+    );
+
+    box-shadow:
+        0 15px 35px rgba(255,95,162,.35);
+    transition:.35s ease;
+}
+
+.hero-button:hover{
+    transform:translateY(-4px);
+    box-shadow:
+        0 20px 45px rgba(255,95,162,.45);
+}
+
+.hero-button:active{
+    transform:scale(.96);
+}
+
+/*=========================================================
+    HERO IMAGE
+=========================================================*/
+
+.hero-image-box{
+
+    position:relative;
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.hero-image-glow{
+
+    position:absolute;
+
+    width:420px;
+
+    height:420px;
+
+    border-radius:50%;
+
+    background:radial-gradient(
+        circle,
+        rgba(255,95,162,.35),
+        transparent 70%
+    );
+
+    filter:blur(35px);
+
+    animation:heroGlow 4s ease-in-out infinite;
+
+}
+
+.hero-image-frame{
+
+    position:relative;
+
+    isolation: isolate;
+
+    width:380px;
+
+    height:500px;
+
+    padding:10px;
+
+    border-radius:35px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    overflow:visible;
+
+    box-shadow:
+
+        0 25px 60px rgba(0,0,0,.35);
+
+}
+
+.hero-image-frame::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-3px;
+
+    border-radius:38px;
+
+    background:linear-gradient(
+        90deg,
+        #ff4d9d,
+        #8b5cf6,
+        #38bdf8,
+        #22c55e,
+        #facc15,
+        #ff4d9d
+    );
+
+    background-size:300% 300%;
+
+    animation:
+
+        heroBorderMove 6s linear infinite,
+
+        heroBorderPulse 2.5s ease-in-out infinite;
+
+    filter:blur(2px);
+
+    z-index:-2;
+
+}
+
+.hero-image-frame::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:2px;
+
+    border-radius:32px;
+
+    background:#111827;
+
+    z-index:-1;
+
+}
+
+.hero-image{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    border-radius:28px;
+
+    transition:.5s ease;
+
+}
+
+.hero-image:hover{
+
+    transform:scale(1.05);
+
+}
+
+/*=========================================================
+    FLOATING HEARTS
+=========================================================*/
+
+.hero-hearts span{
+
+    position:absolute;
+
+    color:rgba(255,255,255,.35);
+
+    font-size:22px;
+
+    animation:heroFloat 10s linear infinite;
+
+}
+
+.hero-hearts span:nth-child(1){
+
+    left:8%;
+
+    bottom:-30px;
+
+    animation-delay:0s;
+
+}
+
+.hero-hearts span:nth-child(2){
+
+    left:20%;
+
+    bottom:-60px;
+
+    animation-delay:2s;
+
+}
+
+.hero-hearts span:nth-child(3){
+
+    left:38%;
+
+    bottom:-40px;
+
+    animation-delay:4s;
+
+}
+
+.hero-hearts span:nth-child(4){
+
+    right:28%;
+
+    bottom:-30px;
+
+    animation-delay:1.5s;
+
+}
+
+.hero-hearts span:nth-child(5){
+
+    right:14%;
+
+    bottom:-50px;
+
+    animation-delay:3.5s;
+
+}
+
+.hero-hearts span:nth-child(6){
+
+    right:5%;
+
+    bottom:-20px;
+
+    animation-delay:5s;
+
+}
+
+/*=========================================================
+    SCROLL INDICATOR
+=========================================================*/
+
+.scroll-indicator{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:30px;
+
+    transform:translateX(-50%);
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:10px;
+
+    z-index:10;
+
+}
+
+.scroll-indicator span{
+
+    color:rgba(255,255,255,.75);
+
+    font-size:.9rem;
+
+    letter-spacing:1px;
+
+}
+
+.scroll-mouse{
+
+    width:28px;
+
+    height:48px;
+
+    border:2px solid rgba(255,255,255,.45);
+
+    border-radius:30px;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.scroll-wheel{
+
+    width:4px;
+
+    height:9px;
+
+    margin-top:8px;
+
+    border-radius:50px;
+
+    background:#ffffff;
+
+    animation:scrollWheel 1.8s infinite;
+
+}
+
+/*=========================================================
+    ANIMATIONS
+=========================================================*/
+
+@keyframes heroGlow{
+
+    0%,100%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.12);
+
+    }
+
+}
+
+@keyframes heroFloat{
+
+    0%{
+
+        transform:translateY(0) scale(.7);
+
+        opacity:0;
+
+    }
+
+    20%{
+
+        opacity:.5;
+
+    }
+
+    100%{
+
+        transform:translateY(-900px) scale(1.2);
+
+        opacity:0;
+
+    }
+
+}
+
+@keyframes scrollWheel{
+
+    0%{
+
+        opacity:0;
+
+        transform:translateY(0);
+
+    }
+
+    40%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:translateY(18px);
+
+    }
+
+}
+
+/*=========================================================
+    RESPONSIVE
+=========================================================*/
+
+@media(max-width:992px){
+
+    .hero-wrapper{
+
+        flex-direction:column-reverse;
+
+        text-align:center;
+
+    }
+
+    .hero-content{
+
+        max-width:100%;
+
+    }
+
+    .hero-description{
+
+        margin-inline:auto;
+
+    }
+
+    .hero-image-frame{
+
+        width:320px;
+
+        height:430px;
+
+    }
+
+    .hero-title{
+
+        font-size:3rem;
+
+    }
+
+}
+
+@media(max-width:576px){
+
+    #hero{
+
+        padding:90px 0;
+
+    }
+
+    .hero-title{
+
+        font-size:2.3rem;
+
+    }
+
+    .hero-image-frame{
+
+        width:270px;
+
+        height:360px;
+
+    }
+
+    .hero-button{
+
+        width:100%;
+
+    }
+
+}
+
+/*=========================================================
+    RGB BORDER ANIMATION
+=========================================================*/
+
+@keyframes heroBorderMove{
+
+    0%{
+
+        background-position:0% 50%;
+
+    }
+
+    100%{
+
+        background-position:300% 50%;
+
+    }
+
+}
+
+@keyframes heroBorderPulse{
+
+    0%,100%{
+
+        box-shadow:
+
+        0 0 15px rgba(255,90,170,.45),
+
+        0 0 35px rgba(120,90,255,.30);
+
+    }
+
+    50%{
+
+        box-shadow:
+
+        0 0 30px rgba(255,90,170,.75),
+
+        0 0 70px rgba(120,90,255,.55);
+
+    }
+
+}
+
+/*=========================================================
+    HERO LOAD ANIMATION
+=========================================================*/
+
+.hero-content{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:1s ease;
+
+}
+
+.hero-image-box{
+
+    opacity:0;
+
+    transform:translateX(50px);
+
+    transition:1s ease .25s;
+
+}
+
+.hero-loaded .hero-content{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+.hero-loaded .hero-image-box{
+
+    opacity:1;
+
+    transform:translateX(0);
+
+}
+
+/*=========================================================
+    BUTTON CLICK
+=========================================================*/
+
+.hero-button.clicked{
+
+    transform:scale(.96);
+
+}
+
+/*=========================================================
+    HERO HEART BURST
+=========================================================*/
+
+.hero-heart{
+
+    position:absolute;
+
+    pointer-events:none;
+
+    font-size:20px;
+
+    z-index:100;
+
+    animation:heroHeartBurst 1.5s ease-out forwards;
+
+}
+
+@keyframes heroHeartBurst{
+
+    0%{
+
+        opacity:1;
+
+        transform:
+            translate(-50%,-50%)
+            translate(0,0)
+            scale(.5);
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+            translate(-50%,-50%)
+            translate(var(--x),var(--y))
+            scale(1.3);
+
+    }
+
+}

@@ -1,0 +1,897 @@
+/*=========================================================
+    SUCCESS SECTION
+=========================================================*/
+
+#success{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:120px 0;
+
+    background:#0f172a;
+
+}
+
+/*=========================================================
+    BACKGROUND
+=========================================================*/
+
+.success-background{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    z-index:0;
+
+}
+
+.success-gradient{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        radial-gradient(circle at top,#ff5f9d25,transparent 60%),
+        radial-gradient(circle at bottom,#9d6cff25,transparent 65%),
+        linear-gradient(
+            180deg,
+            #0f172a,
+            #131c30,
+            #0f172a
+        );
+
+}
+
+/*=========================================================
+    GLOW ORBS
+=========================================================*/
+
+.success-orb{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(90px);
+
+    opacity:.45;
+
+    animation:successFloat 10s ease-in-out infinite;
+
+}
+
+.success-orb.orb-1{
+
+    width:280px;
+
+    height:280px;
+
+    background:#ff5f9d;
+
+    top:-70px;
+
+    left:-80px;
+
+}
+
+.success-orb.orb-2{
+
+    width:260px;
+
+    height:260px;
+
+    background:#9d6cff;
+
+    bottom:-80px;
+
+    right:-70px;
+
+    animation-delay:3s;
+
+}
+
+@keyframes successFloat{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(35px);
+
+    }
+
+}
+
+/*=========================================================
+    CONTAINER
+=========================================================*/
+
+#success .container{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+/*=========================================================
+    HEADER
+=========================================================*/
+
+#success .section-header{
+
+    max-width:760px;
+
+    margin:0 auto 80px;
+
+    text-align:center;
+
+}
+
+#success .section-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:10px 24px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    backdrop-filter:blur(14px);
+
+    color:#ffd6ea;
+
+}
+
+#success .section-title{
+
+    margin-top:24px;
+
+    font-size:clamp(2.6rem,5vw,4.8rem);
+
+    font-weight:800;
+
+    line-height:1.15;
+
+    color:#ffffff;
+
+}
+
+#success .section-title span{
+
+    display:block;
+
+    margin-top:10px;
+
+    background:linear-gradient(
+
+        90deg,
+
+        #ff5f9d,
+
+        #ffd166,
+
+        #9d6cff
+
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+}
+
+#success .section-description{
+
+    margin-top:22px;
+
+    color:#cbd5e1;
+
+    font-size:1.08rem;
+
+    line-height:1.8;
+
+}
+
+/*=========================================================
+    SUCCESS WRAPPER
+=========================================================*/
+
+.success-wrapper{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:80px;
+
+    flex-wrap:wrap;
+
+}
+
+/*=========================================================
+    TEDDY AREA
+=========================================================*/
+
+.success-teddy-box{
+
+    position:relative;
+
+    width:380px;
+
+    height:380px;
+
+    display:flex;
+
+    align-items:flex-end;
+
+    justify-content:center;
+
+}
+
+.success-glow{
+
+    position:absolute;
+
+    width:280px;
+
+    height:280px;
+
+    border-radius:50%;
+
+    background:radial-gradient(
+
+        circle,
+
+        rgba(255,95,157,.35),
+
+        transparent 70%
+
+    );
+
+    filter:blur(40px);
+
+    animation:successGlow 3s ease-in-out infinite;
+
+}
+
+@keyframes successGlow{
+
+    0%,100%{
+
+        transform:scale(1);
+
+        opacity:.8;
+
+    }
+
+    50%{
+
+        transform:scale(1.2);
+
+        opacity:1;
+
+    }
+
+}
+
+.success-boy,
+
+.success-girl{
+
+    position:absolute;
+
+    width:180px;
+
+    user-select:none;
+
+    pointer-events:none;
+
+    transition:.5s ease;
+
+    animation:successFloatTeddy 4s ease-in-out infinite;
+
+}
+
+.success-boy{
+
+    left:40px;
+
+    bottom:0;
+
+    width:260px;
+
+    transform:scaleX(-1);
+
+}
+
+.success-girl{
+
+    right:40px;
+
+    bottom:0;
+
+    width:170px;
+
+}
+
+@keyframes successFloatTeddy{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+}
+
+.success-boy{
+
+    transform:scaleX(-1);
+
+}
+
+.success-boy:hover,
+
+.success-girl:hover{
+
+    transform:translateY(-10px) scale(1.05);
+
+}
+
+/*=========================================================
+    SUCCESS CARD
+=========================================================*/
+
+.success-card{
+
+    position:relative;
+
+   width:520px;
+
+    padding:35px;
+
+    border-radius:28px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    overflow:hidden;
+
+}
+
+.card-glow{
+
+    position:absolute;
+
+    inset:-2px;
+
+    border-radius:32px;
+
+    background:linear-gradient(
+
+        90deg,
+
+        #ff5f9d,
+
+        #9d6cff,
+
+        #38bdf8,
+
+        #ffd166,
+
+        #ff5f9d
+
+    );
+
+    background-size:300% 300%;
+
+    animation:successBorder 8s linear infinite;
+
+    opacity:.15;
+
+    z-index:-1;
+
+}
+
+@keyframes successBorder{
+
+    0%{
+
+        background-position:0% 50%;
+
+    }
+
+    100%{
+
+        background-position:300% 50%;
+
+    }
+
+}
+
+.card-content{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+/*=========================================================
+    TEXT
+=========================================================*/
+
+#successHeading{
+
+    font-size:2rem;
+
+    color:#ffffff;
+
+    margin-bottom:18px;
+
+    font-weight:700;
+
+}
+
+#successMessage{
+
+    color:#dbe4f2;
+
+    line-height:1.9;
+
+    margin-bottom:30px;
+
+}
+
+/*=========================================================
+    SUCCESS INFO
+=========================================================*/
+
+.success-info{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+    margin-bottom:30px;
+
+}
+
+.info-item{
+
+    padding:18px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.10);
+
+    backdrop-filter:blur(12px);
+
+}
+
+.info-item span{
+
+    display:block;
+
+    color:#ff9bc7;
+
+    font-size:.9rem;
+
+    margin-bottom:8px;
+
+}
+
+.info-item strong{
+
+    color:#ffffff;
+
+    font-size:1.05rem;
+
+    font-weight:700;
+
+}
+
+/*=========================================================
+    LOVE QUOTE
+=========================================================*/
+
+#successQuote{
+
+    position:relative;
+
+    margin:35px 0;
+
+    padding:25px;
+
+    border-left:4px solid #ff5f9d;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.05);
+
+    color:#f8fafc;
+
+    font-size:1.05rem;
+
+    line-height:1.9;
+
+    font-style:italic;
+
+}
+
+/*=========================================================
+    RESTART BUTTON
+=========================================================*/
+
+.restart-button{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    width:100%;
+
+    padding:18px 28px;
+
+    border:none;
+
+    border-radius:999px;
+
+    cursor:pointer;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    color:#ffffff;
+
+    background:linear-gradient(
+
+        135deg,
+
+        #ff5f9d,
+
+        #9d6cff
+
+    );
+
+    box-shadow:
+
+        0 10px 30px rgba(255,95,157,.35);
+
+    transition:.35s ease;
+
+}
+
+.restart-button:hover{
+
+    transform:translateY(-4px) scale(1.03);
+
+    box-shadow:
+
+        0 18px 40px rgba(255,95,157,.45);
+
+}
+
+.restart-button:active{
+
+    transform:scale(.97);
+
+}
+
+/*=========================================================
+    HEART RAIN
+=========================================================*/
+
+.heart-rain{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+}
+
+/*=========================================================
+    RESPONSIVE
+=========================================================*/
+
+@media(max-width:992px){
+
+    .success-wrapper{
+
+        flex-direction:column;
+
+        gap:50px;
+
+    }
+
+    .success-teddy-box{
+
+        width:320px;
+
+        height:320px;
+
+    }
+
+    .success-boy,
+
+    .success-girl{
+
+        width:150px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    #success{
+
+        padding:90px 0;
+
+    }
+
+    .success-card{
+
+        padding:28px;
+
+        border-radius:24px;
+
+    }
+
+    .success-info{
+
+        grid-template-columns:1fr;
+
+    }
+
+    #successHeading{
+
+        font-size:1.7rem;
+
+    }
+
+    #successQuote{
+
+        padding:20px;
+
+        font-size:1rem;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .success-teddy-box{
+
+        width:260px;
+
+        height:260px;
+
+    }
+
+    .success-boy,
+
+    .success-girl{
+
+        width:120px;
+
+    }
+
+    .success-card{
+
+        padding:22px;
+
+    }
+
+}
+
+/*=========================================================
+    SMOOTH TRANSITIONS
+=========================================================*/
+
+.success-card,
+.restart-button,
+.info-item,
+.success-boy,
+.success-girl{
+
+    transition:.35s ease;
+
+}
+
+/*=========================================================
+    HEART RAIN
+=========================================================*/
+
+.success-heart{
+
+    position:absolute;
+
+    top:-30px;
+
+    color:#ff5f9d;
+
+    pointer-events:none;
+
+    animation:heartFall linear forwards;
+
+    z-index:5;
+
+}
+
+@keyframes heartFall{
+
+    from{
+
+        transform:
+
+            translateY(-20px)
+
+            rotate(0deg);
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:
+
+            translateY(650px)
+
+            rotate(360deg);
+
+        opacity:0;
+
+    }
+
+}
+
+/*=========================================================
+    TEDDY CELEBRATION
+=========================================================*/
+
+.success-boy.celebrate,
+
+.success-girl.celebrate{
+
+    animation:
+
+        teddyCelebrate
+
+        .8s ease-in-out infinite alternate;
+
+}
+
+@keyframes teddyCelebrate{
+
+    from{
+
+        transform:translateY(0);
+
+    }
+
+    to{
+
+        transform:translateY(-12px);
+
+    }
+
+}
+
+/*=========================================================
+    SUCCESS REVEAL
+=========================================================*/
+
+#success{
+
+    opacity:0;
+
+    transform:translateY(80px);
+
+    transition:
+
+        opacity .9s ease,
+
+        transform .9s ease;
+
+}
+
+#success.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/*=========================================================
+    CONFETTI
+=========================================================*/
+
+.confetti-piece{
+
+    position:absolute;
+
+    top:-20px;
+
+    width:10px;
+
+    height:18px;
+
+    border-radius:3px;
+
+    pointer-events:none;
+
+    animation:confettiFall linear forwards;
+
+    z-index:999;
+
+}
+
+@keyframes confettiFall{
+
+    from{
+
+        transform:
+            translateY(-30px)
+            rotate(0deg);
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:
+            translateY(900px)
+            rotate(720deg);
+
+        opacity:0;
+
+    }
+
+}

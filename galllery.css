@@ -1,0 +1,485 @@
+/*=========================================================
+    GALLERY SECTION
+=========================================================*/
+#gallery{
+    position:relative;
+    min-height:100vh;
+    padding:120px 0;
+    overflow:hidden;
+    background:linear-gradient(
+        135deg,
+        #0b1020,
+        #141c31,
+        #0d1427
+    );
+}
+
+/*=========================================================
+    BACKGROUND
+=========================================================*/
+.gallery-background{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+    z-index:1;
+}
+
+.gallery-gradient{
+    position:absolute;
+    inset:0;
+    background:
+    radial-gradient(circle at top left,
+    rgba(255,90,170,.12),
+    transparent 45%),
+    radial-gradient(circle at bottom right,
+    rgba(110,120,255,.14),
+    transparent 45%);
+}
+
+.gallery-glow{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(90px);
+    opacity:.45;
+}
+
+.glow-left{
+    width:320px;
+    height:320px;
+    background:#ff5fa2;
+    top:-100px;
+    left:-100px;
+}
+
+.glow-right{
+    width:360px;
+    height:360px;
+    background:#6c63ff;
+    bottom:-120px;
+    right:-120px;
+}
+
+/*=========================================================
+    CONTAINER
+=========================================================*/
+#gallery .container{
+    position:relative;
+    z-index:5;
+}
+
+/*=========================================================
+    HEADER
+=========================================================*/
+.gallery-header{
+    max-width:760px;
+    margin:0 auto 70px;
+    text-align:center;
+}
+
+.gallery-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:10px 24px;
+    border-radius:50px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(20px);
+    color:#ffd8ea;
+    font-weight:600;
+}
+
+.gallery-title{
+    margin-top:28px;
+    font-size:3.4rem;
+    font-weight:800;
+    line-height:1.2;
+    color:#ffffff;
+}
+
+.gallery-title span{
+    display:block;
+    margin-top:10px;
+    color:#ff6fae;
+}
+
+.gallery-description{
+    margin-top:24px;
+    color:rgba(255,255,255,.75);
+    font-size:1.05rem;
+    line-height:1.9;
+}
+
+/*=========================================================
+    GALLERY GRID
+=========================================================*/
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+/*=========================================================
+    GALLERY CARD
+=========================================================*/
+.gallery-card{
+    position:relative;
+    height:420px;
+    border-radius:28px;
+    overflow:hidden;
+    cursor:pointer;
+    background:rgba(255,255,255,.06);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,.08);
+    transition:.45s ease;
+    isolation:isolate;
+}
+
+/*=========================================================
+    PREMIUM RGB BORDER
+=========================================================*/
+.gallery-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:28px;
+    padding:2px;
+    background:linear-gradient(
+        90deg,
+        #ff4d9d,
+        #8b5cf6,
+        #38bdf8,
+        #22c55e,
+        #facc15,
+        #ff4d9d
+    );
+
+    background-size:300% 300%;
+    animation:galleryBorderMove 6s linear infinite;
+    opacity:0;
+    transition:.4s ease;
+    pointer-events:none;
+    z-index:5;
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite:xor;
+    mask-composite:exclude;
+}
+
+.gallery-card:hover::before{
+    opacity:1;
+}
+
+.gallery-card::after{
+    display:none;
+}
+
+/*=========================================================
+    IMAGE
+=========================================================*/
+.gallery-image{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.6s ease;
+    position: relative;
+    z-index: 2;
+}
+
+/*=========================================================
+    HOVER
+=========================================================*/
+.gallery-card:hover{
+    transform:translateY(-12px);
+    box-shadow:
+        0 25px 55px rgba(0,0,0,.35);
+}
+
+.gallery-card:hover::before{
+    opacity:1;
+}
+
+.gallery-card:hover .gallery-image{
+    transform:scale(1.08);
+}
+
+/*=========================================================
+    IMAGE OVERLAY
+=========================================================*/
+.gallery-card .overlay{
+    position:absolute;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(
+        transparent,
+        rgba(0,0,0,.55)
+    );
+    opacity:0;
+    transition:.35s;
+}
+
+.gallery-card:hover .overlay{
+    opacity:1;
+}
+
+.gallery-card .overlay span{
+    font-size:2rem;
+    color:#ffffff;
+}
+
+/*=========================================================
+    LIGHTBOX
+=========================================================*/
+
+.gallery-lightbox{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(5,8,18,.92);
+
+    backdrop-filter:blur(18px);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.4s ease;
+
+    z-index:9999;
+
+}
+
+.gallery-lightbox.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.lightbox-image{
+
+    width:min(90vw,900px);
+
+    max-height:85vh;
+
+    object-fit:contain;
+
+    border-radius:22px;
+
+    border:2px solid rgba(255,255,255,.12);
+
+    box-shadow:
+
+        0 25px 80px rgba(0,0,0,.55);
+
+    animation:lightboxZoom .45s ease;
+
+}
+
+.lightbox-close{
+
+    position:absolute;
+
+    top:35px;
+
+    right:45px;
+
+    font-size:42px;
+
+    color:#ffffff;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.lightbox-close:hover{
+
+    color:#ff5fa2;
+
+    transform:rotate(90deg);
+
+}
+
+/*=========================================================
+    ENTRANCE ANIMATION
+=========================================================*/
+
+.gallery-card{
+
+    opacity:0;
+
+    transform:translateY(50px);
+
+}
+
+.gallery-card.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+    transition:
+
+        opacity .8s ease,
+
+        transform .8s ease;
+
+}
+
+/*=========================================================
+    RGB BORDER ANIMATION
+=========================================================*/
+
+@keyframes galleryBorderMove{
+
+    0%{
+
+        background-position:0% 50%;
+
+    }
+
+    100%{
+
+        background-position:300% 50%;
+
+    }
+
+}
+
+/*=========================================================
+    LIGHTBOX ANIMATION
+=========================================================*/
+
+@keyframes lightboxZoom{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.8);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+/*=========================================================
+    RESPONSIVE
+=========================================================*/
+
+@media(max-width:992px){
+
+    .gallery-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .gallery-title{
+
+        font-size:2.8rem;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .gallery-grid{
+
+        grid-template-columns:1fr;
+
+        gap:24px;
+
+    }
+
+    .gallery-card{
+
+        height:380px;
+
+    }
+
+    .gallery-title{
+
+        font-size:2.2rem;
+
+    }
+
+    .gallery-description{
+
+        font-size:1rem;
+
+    }
+
+    .lightbox-close{
+
+        top:20px;
+
+        right:25px;
+
+        font-size:34px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    #gallery{
+
+        padding:90px 0;
+
+    }
+
+    .gallery-card{
+
+        height:320px;
+
+    }
+
+    .gallery-title{
+
+        font-size:1.9rem;
+
+    }
+
+}.gallery-card{
+
+    opacity:0;
+
+    transform:translateY(50px);
+
+}
+
+.gallery-card.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+
+}

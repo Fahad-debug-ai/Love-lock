@@ -1,0 +1,993 @@
+/*=========================================================
+    LETTER SECTION
+    PART 1
+=========================================================*/
+
+/*=========================================================
+    SECTION
+=========================================================*/
+
+#letter{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:140px 0;
+
+    background:#0f172a;
+
+}
+
+/*=========================================================
+    BACKGROUND
+=========================================================*/
+
+.letter-background{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    z-index:0;
+
+}
+
+.letter-gradient{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    radial-gradient(circle at 15% 20%,
+    rgba(255,80,150,.18),
+    transparent 45%),
+
+    radial-gradient(circle at 85% 75%,
+    rgba(120,120,255,.16),
+    transparent 45%);
+
+}
+
+.letter-orb{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(90px);
+
+    animation:orbFloat 12s ease-in-out infinite;
+
+}
+
+.orb-1{
+
+    width:260px;
+
+    height:260px;
+
+    background:#ff5ea8;
+
+    top:-70px;
+
+    left:-80px;
+
+}
+
+.orb-2{
+
+    width:320px;
+
+    height:320px;
+
+    background:#7c5cff;
+
+    right:-120px;
+
+    bottom:-120px;
+
+}
+
+.orb-3{
+
+    width:180px;
+
+    height:180px;
+
+    background:#5fd3ff;
+
+    top:45%;
+
+    left:55%;
+
+}
+
+/*=========================================================
+    PARTICLES
+=========================================================*/
+
+.letter-particles{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+}
+
+.letter-particles::before,
+
+.letter-particles::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+
+        radial-gradient(#ffd4e7 2px,transparent 2px);
+
+    background-size:90px 90px;
+
+    opacity:.25;
+
+    animation:particleMove 20s linear infinite;
+
+}
+
+.letter-particles::after{
+
+    animation-direction:reverse;
+
+    opacity:.15;
+
+}
+
+/*=========================================================
+    CONTAINER
+=========================================================*/
+
+#letter .container{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+/*=========================================================
+    HEADER
+=========================================================*/
+
+#letter .section-header{
+
+    max-width:760px;
+
+    margin:0 auto 10px;
+
+    text-align:center;
+
+}
+
+#letter .section-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:12px 24px;
+
+    border-radius:50px;
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    color:#ffd4e7;
+
+    backdrop-filter:blur(18px);
+
+}
+
+#letter .section-title{
+
+    margin-top:28px;
+
+    font-size:clamp(2.8rem,5vw,4.8rem);
+
+    font-weight:800;
+
+    line-height:1.15;
+
+    color:#fff;
+
+}
+
+#letter .section-title span{
+
+    display:block;
+
+    margin-top:10px;
+
+    background:linear-gradient(
+
+        90deg,
+
+        #ff5ea8,
+
+        #ff89d1,
+
+        #ffffff
+
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+}
+
+#letter .section-description{
+
+    max-width:620px;
+
+    margin:26px auto 0;
+
+    font-size:1.12rem;
+
+    line-height:1.9;
+
+    color:rgba(255,255,255,.78);
+
+}
+
+/*=========================================================
+    LETTER WRAPPER
+=========================================================*/
+
+.letter-wrapper{
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-end;
+
+    min-height:500px;
+
+}
+
+/*=========================================================
+    TEDDY
+=========================================================*/
+.letter-teddy-box{
+
+    position:absolute;
+
+    left:42%;
+
+    bottom:18px;
+
+    transform:translateX(260px);
+
+    z-index:50;
+
+}
+
+.letter-teddy{
+
+    width:200px;
+
+    display:block;
+
+    user-select:none;
+
+    pointer-events:none;
+
+    transform-origin:bottom center;
+
+    animation:teddyIdle 3.5s ease-in-out infinite;
+
+    filter:drop-shadow(
+        0 16px 20px rgba(0,0,0,.25)
+    );
+
+}
+
+.teddy-glow{
+
+    position:absolute;
+
+    inset:20px;
+
+    border-radius:50%;
+
+    background:rgba(255,120,180,.18);
+
+    filter:blur(45px);
+
+}
+
+/*=========================================================
+    ANIMATIONS
+=========================================================*/
+
+@keyframes teddyIdle{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+}
+
+@keyframes orbFloat{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-35px);
+
+    }
+
+}
+
+@keyframes particleMove{
+
+    from{
+
+        transform:translateY(0);
+
+    }
+
+    to{
+
+        transform:translateY(-120px);
+
+    }
+
+}
+
+/*=========================================================
+    LETTER SECTION
+    PART 2
+=========================================================*/
+
+/*=========================================================
+    ENVELOPE
+=========================================================*/
+
+.envelope{
+
+    position:relative;
+
+    width:420px;
+
+    height:290px;
+
+    cursor:pointer;
+
+    perspective:1200px;
+
+    transition:.5s ease;
+
+}
+
+.envelope:hover{
+
+    transform:translateY(-10px) scale(1.02);
+
+}
+
+/*=========================================================
+    ENVELOPE GLOW
+=========================================================*/
+
+.envelope-glow{
+
+    position:absolute;
+
+    inset:-40px;
+
+    border-radius:40px;
+
+    background:radial-gradient(
+
+        circle,
+
+        rgba(255,90,170,.22),
+
+        transparent 70%
+
+    );
+
+    filter:blur(30px);
+
+    z-index:-2;
+
+}
+
+/*=========================================================
+    BACK
+=========================================================*/
+
+.envelope-back{
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius: 10px;
+
+    background:linear-gradient(
+
+        145deg,
+
+        #ffd7e7,
+
+        #ffb9d3
+
+    );
+
+    box-shadow:
+
+        0 20px 50px rgba(0,0,0,.25);
+
+}
+
+/*=========================================================
+    FRONT
+=========================================================*/
+
+.envelope-front{
+
+    position:absolute;
+
+    left:0;
+
+    right:0;
+
+    bottom:0;
+
+    height:180px;
+
+    background:linear-gradient(
+
+        180deg,
+
+        #ff7ab2,
+
+        #ff4e94
+
+    );
+
+    z-index:10;
+
+}
+
+/*=========================================================
+    LEFT FOLD
+=========================================================*/
+
+.fold-left{
+
+    position:absolute;
+
+    left:0;
+
+    bottom:0;
+
+    width:50%;
+
+    height:180px;
+
+    background:#ff67a6;
+
+    clip-path:polygon(
+
+        0 100%,
+
+        100% 0,
+
+        100% 100%
+
+    );
+
+    z-index:11;
+
+}
+
+/*=========================================================
+    RIGHT FOLD
+=========================================================*/
+
+.fold-right{
+
+    position:absolute;
+
+    right:0;
+
+    bottom:0;
+
+    width:50%;
+
+    height:180px;
+
+    background:#ff5b9f;
+
+    clip-path:polygon(
+
+        0 0,
+
+        100% 100%,
+
+        0 100%
+
+    );
+
+    z-index:11;
+
+}
+
+/*=========================================================
+    TOP FLAP
+=========================================================*/
+
+.envelope-flap{
+
+    backface-visibility:hidden;
+    transform-style:preserve-3d;
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:170px;
+
+    background:linear-gradient(
+
+        180deg,
+
+        #ff92c3,
+
+        #ff6cae
+
+    );
+
+    clip-path:polygon(
+
+        0 0,
+
+        50% 100%,
+
+        100% 0
+
+    );
+
+    transform-origin:top;
+
+    z-index:20;
+
+    transition:
+
+        transform .8s ease;
+
+}
+
+/*=========================================================
+    LETTER
+=========================================================*/
+
+.letter-paper{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:25px;
+
+    transform:translateX(-50%);
+
+    width:340px;
+
+    height:240px;
+
+    background:#fffefb;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:
+
+        0 15px 35px rgba(0,0,0,.18);
+
+    z-index:5;
+
+}
+
+/*=========================================================
+    PAPER BORDER
+=========================================================*/
+
+.paper-top-border{
+
+    height:8px;
+
+    background:linear-gradient(
+
+        90deg,
+
+        #ff5ea8,
+
+        #ffd166,
+
+        #7c5cff
+
+    );
+
+}
+
+/*=========================================================
+    PAPER CONTENT
+=========================================================*/
+
+.paper-content{
+
+    padding:26px;
+
+    height:calc(100% - 8px);
+
+    overflow:auto;
+
+}
+
+.paper-content h3{
+
+    text-align:center;
+
+    color:#ff4d92;
+
+    margin-bottom:20px;
+
+    font-size:1.8rem;
+
+}
+
+.paper-content p{
+
+    line-height:1.9;
+
+    color:#4b5563;
+
+    font-size:1rem;
+
+}
+
+.paper-content span{
+
+    display:block;
+
+    margin-top:28px;
+
+    text-align:right;
+
+    color:#ff4d92;
+
+    font-style:italic;
+
+}
+
+/*=========================================================
+    LETTER SECTION
+    PART 3
+=========================================================*/
+
+/*=========================================================
+    WAX SEAL
+=========================================================*/
+
+.wax-seal{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:105px;
+
+    transform:translateX(-50%);
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:1.6rem;
+
+    color:#fff;
+
+    background:radial-gradient(
+
+        circle at 30% 30%,
+
+        #ff9ac4,
+
+        #ff4d92 60%,
+
+        #d91d68
+
+    );
+
+    border:4px solid rgba(255,255,255,.25);
+
+    box-shadow:
+
+        0 12px 25px rgba(255,80,140,.45),
+
+        inset 0 3px 8px rgba(255,255,255,.35),
+
+        inset 0 -6px 12px rgba(0,0,0,.25);
+
+    z-index:30;
+
+    transition:.4s;
+
+}
+
+.envelope:hover .wax-seal{
+
+    transform:
+
+        translateX(-50%)
+
+        scale(1.08)
+
+        rotate(8deg);
+
+}
+
+/*=========================================================
+    OPEN STATE
+=========================================================*/
+
+.envelope.open .envelope-flap{
+
+    transform:rotateX(180deg);
+
+}
+
+.envelope.open .letter-paper{
+
+    animation:letterSlide .9s ease forwards;
+
+}
+
+.letter-teddy.jump{
+
+    animation:teddyJump .9s ease;
+
+}
+
+/*=========================================================
+    LETTER ANIMATION
+=========================================================*/
+
+@keyframes letterSlide{
+
+    0%{
+
+        transform:
+
+            translateX(-50%)
+
+            translateY(0);
+
+    }
+
+    100%{
+
+        transform:
+
+            translateX(-50%)
+
+            translateY(-170px);
+
+    }
+
+}
+
+
+
+/*=========================================================
+    PAPER SCROLLBAR
+=========================================================*/
+
+.paper-content::-webkit-scrollbar{
+
+    width:6px;
+
+}
+
+.paper-content::-webkit-scrollbar-thumb{
+
+    background:#ff77b5;
+
+    border-radius:20px;
+
+}
+
+/*=========================================================
+    RESPONSIVE
+=========================================================*/
+
+@media(max-width:992px){
+
+    .letter-wrapper{
+
+        flex-direction:column;
+
+        gap:40px;
+
+    }
+
+    .letter-teddy{
+
+        width:170px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .envelope{
+
+        width:340px;
+
+        height:245px;
+
+    }
+
+    .letter-paper{
+
+        width:275px;
+
+        height:205px;
+
+    }
+
+    .paper-content{
+
+        padding:18px;
+
+    }
+
+    .paper-content h3{
+
+        font-size:1.5rem;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .envelope{
+
+        width:300px;
+
+        height:220px;
+
+    }
+
+    .letter-paper{
+
+        width:245px;
+
+        height:180px;
+
+    }
+
+    .wax-seal{
+
+        width:58px;
+
+        height:58px;
+
+        bottom:90px;
+
+        font-size:1.3rem;
+
+    }
+
+}
+
+/*=========================================================
+    FLOATING HEARTS
+=========================================================*/
+
+.letter-heart{
+
+    position:absolute;
+
+    bottom:120px;
+
+    color:#ff4d92;
+
+    animation:heartFly 3s linear forwards;
+
+    pointer-events:none;
+
+    z-index:100;
+
+}
+
+@keyframes heartFly{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+
+            translateY(0)
+
+            scale(.5);
+
+    }
+
+    20%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+
+            translateY(-260px)
+
+            rotate(25deg)
+
+            scale(1.4);
+
+    }
+
+}

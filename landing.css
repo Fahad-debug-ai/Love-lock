@@ -1,0 +1,1105 @@
+/* ==========================================================
+   LANDING SECTION
+========================================================== */
+#landing{
+    position:relative;
+    width:100%;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    padding:24px 20px;
+}
+
+/* ==========================================================
+   BACKGROUND
+========================================================== */
+.landing-background{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+    z-index:-5;
+}
+
+/* Main Gradient */
+.bg-gradient{
+    position:absolute;
+    inset:0;
+    background:
+        radial-gradient(circle at 15% 15%,
+        rgba(255,77,141,.16),
+        transparent 28%),
+        radial-gradient(circle at 85% 80%,
+        rgba(79,140,255,.14),
+        transparent 30%),
+        radial-gradient(circle at 50% 40%,
+        rgba(139,92,246,.10),
+        transparent 45%),
+        linear-gradient(
+            135deg,
+            #090E1A 0%,
+            #101726 45%,
+            #1B2740 100%
+        );
+}
+
+/* ==========================================================
+   FLOATING ORBS
+========================================================== */
+.bg-orb{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(90px);
+    opacity:.35;
+}
+
+.orb-one{
+    width:320px;
+    height:320px;
+    top:-140px;
+    left:-120px;
+    background:var(--color-pink);
+}
+
+.orb-two{
+    width:360px;
+    height:360px;
+    right:-150px;
+    bottom:-160px;
+    background:var(--color-purple);
+}
+
+.orb-three{
+    width:240px;
+    height:240px;
+    left:50%;
+    top:45%;
+    transform:translate(-50%,-50%);
+    background:var(--color-blue);
+}
+
+/* ==========================================================
+   CONTAINER
+========================================================== */
+#landing .container{
+    width:100%;
+    max-width:1200px;
+    margin-inline:auto;
+}
+
+/* ==========================================================
+   WRAPPER
+========================================================== */
+.landing-wrapper{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* ==========================================================
+   GLASS CARD
+========================================================== */
+.landing-card{
+    position:relative;
+    width:100%;
+    max-width:580px;
+    border-radius:32px;
+    overflow:hidden;
+}
+
+/* ==========================================================
+   PREMIUM NEON BORDER
+========================================================== */
+.card-border{
+    position:absolute;
+    inset:-1px;
+    overflow:hidden;
+    border-radius:32px;
+}
+
+/* Rotating Gradient */
+.card-border::before{
+    content:"";
+    position:absolute;
+    width:220%;
+    height:220%;
+    left:-60%;
+    top:-60%;
+    background:conic-gradient(
+        from 0deg,
+        transparent 0deg,
+        transparent 40deg,
+        rgba(255,77,141,.95) 80deg,
+        rgba(139,92,246,.95) 150deg,
+        rgba(79,140,255,.95) 220deg,
+        rgba(255,77,141,.95) 300deg,
+        transparent 360deg
+    );
+    animation:borderRotate 8s linear infinite;
+}
+
+/* Glass Mask */
+.card-border::after{
+    content:"";
+    position:absolute;
+    inset:2px;
+    border-radius:30px;
+    background:rgba(19,28,46,.95);
+}
+
+/* ==========================================================
+   CARD CONTENT
+========================================================== */
+.card-content{
+    position:relative;
+    z-index: 5;
+    margin: 3px;
+    border-radius:30px;
+    background:rgba(19,28,46,.88);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.35);
+    padding:28px 30px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+}
+
+/* ==========================================================
+   COMMON SPACING
+========================================================== */
+.card-content>*{
+    position:relative;
+    z-index:2;
+}
+
+/* ==========================================================
+   PLACEHOLDER
+   (Part 2 se styling start hogi)
+========================================================== */
+.teddy-box,
+.landing-badge,
+.landing-title,
+.landing-description,
+.unlock-form{
+    width:100%;
+}
+
+/* ==========================================================
+   TEDDY
+========================================================== */
+.teddy-box{
+    position:relative;
+    width:160px;
+    height:160px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:12px;
+}
+
+.teddy-glow{
+    position:absolute;
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    background:radial-gradient(
+        circle,
+        rgba(255,77,141,.25),
+        rgba(139,92,246,.18),
+        transparent 70%
+    );
+
+    filter:blur(30px);
+    z-index:0;
+}
+
+.teddy-image{
+    position:relative;
+    width:145px;
+    height:auto;
+    z-index:2;
+    user-select:none;
+    pointer-events:none;
+    filter:
+        drop-shadow(0 15px 25px rgba(0,0,0,.35));
+}
+
+/* ==========================================================
+   BADGE
+========================================================== */
+.landing-badge{
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    gap:8px;
+    width:auto;
+    padding:12px 24px;
+    margin-bottom:18px;
+    border-radius:999px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.10);
+    color:var(--color-gold);
+    font-size:.95rem;
+    font-weight:600;
+    letter-spacing:.3px;
+    backdrop-filter:blur(12px);
+}
+
+/* ==========================================================
+   TITLE
+========================================================== */
+.landing-title{
+    max-width:460px;
+    margin-bottom:12px;
+    font-family:"Cormorant Garamond",serif;
+    font-size:3rem;
+    font-weight:700;
+    line-height:1.08;
+    color:var(--text-heading);
+}
+
+.landing-title span{
+    display:block;
+    margin-top:8px;
+    color:var(--text-heading);
+}
+
+/* ==========================================================
+   DESCRIPTION
+========================================================== */
+.landing-description{
+    max-width:430px;
+    margin-bottom:22px;
+    color:var(--text-muted);
+    font-size:1.05rem;
+    line-height:1.8;
+}
+
+/* ==========================================================
+   FORM
+========================================================== */
+.unlock-form{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:22px;
+}
+
+/* ==========================================================
+   INPUT WRAPPER
+========================================================== */
+.input-wrapper{
+    width:100%;
+    position:relative;
+}
+
+/* ==========================================================
+   INPUT
+========================================================== */
+.unlock-input{
+    width:100%;
+    height:64px;
+    padding:0 22px;
+    border-radius:18px;
+    border:1px solid rgba(255,255,255,.10);
+    background:rgba(255,255,255,.05);
+    color:var(--text-heading);
+    font-size:1rem;
+    outline:none;
+    transition:var(--transition-normal);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+}
+
+.unlock-input::placeholder{
+    color:var(--text-muted);
+}
+
+.unlock-input:hover{
+    border-color:rgba(255,255,255,.18);
+}
+
+.unlock-input:focus{
+    border-color:var(--color-pink);
+    box-shadow:
+        0 0 0 4px rgba(255,77,141,.12),
+        0 10px 30px rgba(255,77,141,.20);
+}
+
+/* ==========================================================
+   BUTTON
+========================================================== */
+.unlock-button{
+    position:relative;
+    width:100%;
+    height:62px;
+    border:none;
+    border-radius:18px;
+    overflow:hidden;
+    background:var(--gradient-primary);
+    color:#fff;
+    font-size:1rem;
+    font-weight:700;
+    letter-spacing:.3px;
+    transition:var(--transition-normal);
+    box-shadow:
+        0 18px 40px rgba(139,92,246,.28);
+}
+
+/* Shine Layer */
+.unlock-button::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-120%;
+    width:60%;
+    height:100%;
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.45),
+            transparent
+        );
+
+    transition:.8s;
+}
+
+/* Hover */
+.unlock-button:hover{
+    transform:
+        translateY(-4px);
+    box-shadow:
+        0 22px 50px rgba(255,77,141,.35);
+}
+
+/* Shine Animation */
+.unlock-button:hover::before{
+    left:150%;
+}
+
+/* Click */
+.unlock-button:active{
+    transform:scale(.98);
+}
+
+/* ==========================================================
+   CARD HOVER
+========================================================== */
+.landing-card{
+    transition:
+        transform .45s ease,
+        box-shadow .45s ease;
+}
+
+.landing-card:hover{
+    transform:translateY(-6px);
+}
+
+/* ==========================================================
+   BORDER GLOW
+========================================================== */
+.card-border{
+    animation:
+        borderFlow 8s linear infinite;
+}
+
+/* ==========================================================
+   ANIMATIONS
+========================================================== */
+@keyframes borderRotate{
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+/* ==========================================================
+   TEDDY ANIMATION
+========================================================== */
+.teddy-box{
+    animation:teddyFloat 5s ease-in-out infinite;
+}
+
+.teddy-image{
+    transition:
+        transform .35s ease,
+        filter .35s ease;
+}
+
+.landing-card:hover .teddy-image{
+    transform:
+        scale(1.04)
+        rotate(-3deg);
+    filter:
+        drop-shadow(0 20px 35px rgba(255,77,141,.25));
+}
+
+.teddy-glow{
+    animation:
+        teddyGlow 4s ease-in-out infinite;
+}
+
+/* ==========================================================
+   BACKGROUND ANIMATION
+========================================================== */
+.bg-gradient{
+    animation:
+        gradientMove 16s ease-in-out infinite;
+}
+
+.bg-orb{
+    animation:
+        orbFloat 14s ease-in-out infinite;
+}
+
+.orb-two{
+    animation-delay:-5s;
+}
+
+.orb-three{
+    animation-delay:-9s;
+}
+
+/* ==========================================================
+   GLASS REFLECTION
+========================================================== */
+.card-content::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-60%;
+    width:45%;
+    height:100%;
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.08),
+            transparent
+        );
+
+    transform:skewX(-25deg);
+    transition:1s;
+}
+
+.landing-card:hover .card-content::before{
+    left:130%;
+}
+
+/* ==========================================================
+   CARD SHADOW
+========================================================== */
+.landing-card:hover{
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.35);
+}
+
+.landing-card:hover .card-border::before{
+    filter:brightness(1.3);
+}
+
+/* ==========================================================
+   KEYFRAMES
+========================================================== */
+@keyframes teddyFloat{
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+@keyframes teddyGlow{
+    0%{
+        transform:scale(.95);
+        opacity:.55;
+    }
+
+    50%{
+        transform:scale(1.1);
+        opacity:1;
+    }
+
+    100%{
+        transform:scale(.95);
+        opacity:.55;
+    }
+}
+
+@keyframes gradientMove{
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.08);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+}
+
+@keyframes orbFloat{
+    0%{
+        transform:translate(0,0);
+    }
+
+    25%{
+        transform:translate(25px,-18px);
+    }
+
+    50%{
+        transform:translate(-15px,20px);
+    }
+
+    75%{
+        transform:translate(18px,12px);
+    }
+
+    100%{
+        transform:translate(0,0);
+    }
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+@media (max-width:992px){
+    .landing-card{
+        max-width:540px;
+    }
+}
+
+@media (max-width:768px){
+    #landing{
+        padding:40px 18px;
+    }
+
+    .card-content{
+        padding:32px 24px;
+    }
+
+    .teddy-box{
+        width:135px;
+        height:135px;
+    }
+
+    .teddy-image{
+        width:120px;
+    }
+
+    .landing-title{
+        font-size:2.4rem;
+    }
+}
+
+@media (max-width:480px){
+    .card-content{
+        padding:28px 20px;
+    }
+
+    .landing-title{
+        font-size:2rem;
+        line-height:1.1;
+    }
+
+    .landing-description{
+        font-size:.95rem;
+        line-height:1.7;
+    }
+
+    .unlock-input{
+        height:58px;
+    }
+
+    .unlock-button{
+        height:58px;
+    }
+}
+
+/* ==========================================================
+   FLOATING HEARTS
+========================================================== */
+.floating-hearts{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+}
+
+.heart{
+    position:absolute;
+    color:#ff6ba6;
+    font-size:26px;
+    opacity:.55;
+    text-shadow:
+        0 0 10px rgba(255,107,166,.8),
+        0 0 20px rgba(255,77,141,.5),
+        0 0 35px rgba(255,77,141,.35);
+    animation:heartFloat linear infinite;
+}
+
+.h1{left:6%;animation-duration:18s;animation-delay:0s;}
+.h2{left:18%;animation-duration:22s;animation-delay:-6s;}
+.h3{left:32%;animation-duration:16s;animation-delay:-3s;}
+.h4{left:46%;animation-duration:24s;animation-delay:-9s;}
+.h5{left:61%;animation-duration:20s;animation-delay:-4s;}
+.h6{left:73%;animation-duration:18s;animation-delay:-10s;}
+.h7{left:86%;animation-duration:21s;animation-delay:-7s;}
+.h8{left:94%;animation-duration:19s;animation-delay:-12s;}
+
+/* ==========================================================
+   SPARKLES
+========================================================== */
+.sparkles{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+}
+
+.spark{
+    position:absolute;
+    width:3px;
+    height:3px;
+    border-radius:50%;
+    background:white;
+    opacity:.35;
+    box-shadow:
+        0 0 10px white;
+    animation:sparkGlow 4s ease-in-out infinite;
+}
+
+.s1{top:10%;left:15%;}
+.s2{top:22%;left:70%;}
+.s3{top:38%;left:30%;}
+.s4{top:50%;left:82%;}
+.s5{top:70%;left:18%;}
+.s6{top:80%;left:60%;}
+.s7{top:32%;left:90%;}
+.s8{top:14%;left:46%;}
+
+/* ==========================================================
+   HEARTS ANIMATION
+========================================================== */
+@keyframes heartFloat{
+    from{
+        transform:
+            translateY(110vh)
+            scale(.6);
+        opacity:0;
+    }
+
+    15%{
+        opacity:.65;
+    }
+
+    70%{
+        opacity:.85;
+    }
+
+    to{
+        transform:
+            translateY(-20vh)
+            scale(1.2);
+        opacity:.55;
+    }
+}
+
+/* ==========================================================
+   SPARKLES
+========================================================== */
+@keyframes sparkGlow{
+    0%{
+        opacity:.2;
+        transform:scale(1);
+    }
+
+    50%{
+        opacity:.9;
+        transform:scale(1.8);
+    }
+
+    100%{
+        opacity:.2;
+        transform:scale(1);
+    }
+}
+
+/* ==========================================================
+   MOUSE GLOW
+========================================================== */
+/* ==========================================================
+   MOUSE GLOW
+========================================================== */
+.mouse-glow{
+    position:absolute;
+    width:420px;
+    height:420px;
+    left:0;
+    top:0;
+    border-radius:50%;
+    pointer-events:none;
+    transform:translate(-50%,-50%);
+    background:radial-gradient(
+        circle,
+        rgba(255,77,141,.22) 0%,
+        rgba(139,92,246,.15) 35%,
+        rgba(79,140,255,.08) 60%,
+        transparent 100%
+    );
+    filter:blur(70px);
+    opacity:0;
+    transition:
+        left .15s linear,
+        top .15s linear,
+        opacity .35s ease;
+}
+
+/* ==========================================================
+   PAGE LOAD ANIMATION
+========================================================== */
+.card-content{
+    animation:cardReveal .9s ease forwards;
+}
+
+.teddy-box{
+    animation:
+        teddyEntrance 1s ease,
+        teddyFloat 5s ease-in-out 1s infinite;
+}
+
+.landing-badge{
+    opacity:0;
+    animation:fadeUp .8s .25s forwards;
+}
+
+.landing-title{
+    opacity:0;
+    animation:fadeUp .8s .45s forwards;
+}
+
+.landing-description{
+    opacity:0;
+    animation:fadeUp .8s .65s forwards;
+}
+
+.unlock-form{
+    opacity:0;
+    animation:fadeUp .8s .85s forwards;
+}
+
+/* ==========================================================
+   KEYFRAMES
+========================================================== */
+@keyframes cardReveal{
+    from{
+        opacity:0;
+        transform:
+            translateY(35px)
+            scale(.96);
+    }
+
+    to{
+        opacity:1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+@keyframes teddyEntrance{
+    from{
+        opacity:0;
+        transform:
+            translateY(-35px)
+            scale(.75);
+    }
+
+    to{
+        opacity:1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:
+            translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:
+            translateY(0);
+    }
+}
+
+/*=========================================================
+    LANDING SUCCESS
+=========================================================*/
+
+.landing-card.success{
+
+    box-shadow:
+
+        0 0 50px rgba(255,90,150,.45);
+
+}
+
+
+
+.landing-card.unlocking{
+
+    animation:unlockScale .8s ease;
+
+}
+
+
+
+#landing.hide{
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+
+    transition:1s ease;
+
+}
+
+
+
+@keyframes unlockScale{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(.95);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+/*=========================================================
+    SHAKE ANIMATION
+=========================================================*/
+
+.landing-card.shake{
+
+    animation:landingShake .6s ease;
+
+}
+
+@keyframes landingShake{
+
+    0%{
+
+        transform:translateX(0);
+
+    }
+
+    20%{
+
+        transform:translateX(-10px);
+
+    }
+
+    40%{
+
+        transform:translateX(10px);
+
+    }
+
+    60%{
+
+        transform:translateX(-8px);
+
+    }
+
+    80%{
+
+        transform:translateX(8px);
+
+    }
+
+    100%{
+
+        transform:translateX(0);
+
+    }
+
+}
+
+/*=========================================================
+    SUCCESS
+=========================================================*/
+
+.landing-card.success{
+
+    box-shadow:
+
+        0 0 60px rgba(255,100,170,.45);
+
+}
+
+/*=========================================================
+    UNLOCKING
+=========================================================*/
+
+.landing-card.unlocking{
+
+    animation:unlockPulse .8s ease forwards;
+
+}
+
+@keyframes unlockPulse{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(.95);
+
+    }
+
+    100%{
+
+        transform:scale(1.05);
+
+    }
+
+}
+
+/*=========================================================
+    HIDE LANDING
+=========================================================*/
+
+#landing.hide{
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+
+    transition:1s ease;
+
+}
+
+/*=========================================================
+    TEDDY HAPPY
+=========================================================*/
+
+.teddy-image.happy{
+
+    animation:teddyHappy 1s ease-in-out infinite;
+
+}
+
+@keyframes teddyHappy{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    25%{
+
+        transform:translateY(-12px);
+
+    }
+
+    50%{
+
+        transform:translateY(0);
+
+    }
+
+    75%{
+
+        transform:translateY(-8px);
+
+    }
+
+}
+
+/*=========================================================
+    LANDING HEART BURST
+=========================================================*/
+
+.landing-heart{
+
+    position:absolute;
+
+    pointer-events:none;
+
+    z-index:100;
+
+    font-size:22px;
+
+    animation:landingHeartBurst 1.5s ease-out forwards;
+
+}
+
+@keyframes landingHeartBurst{
+
+    0%{
+
+        opacity:1;
+
+        transform:
+            translate(-50%,-50%)
+            translate(0,0)
+            scale(.5);
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+            translate(-50%,-50%)
+            translate(var(--x),var(--y))
+            scale(1.4);
+
+    }
+
+}
