@@ -991,3 +991,344 @@
     }
 
 }
+
+/* =========================================================
+   LETTER SECTION — MOBILE RESPONSIVE FIX
+   ADD THIS AT THE VERY END OF letter.css
+========================================================= */
+
+@media (max-width: 768px) {
+
+    /* ================================
+       LETTER SECTION
+    ================================= */
+
+    #letter {
+        padding: 90px 0 110px;
+    }
+
+    /* ================================
+       HEADER
+    ================================= */
+
+    #letter .section-header {
+        width: 100%;
+        padding: 0 18px;
+        margin-bottom: 0;
+    }
+
+    #letter .section-badge {
+        padding: 10px 18px;
+        font-size: 0.85rem;
+    }
+
+    #letter .section-title {
+        font-size: clamp(2.2rem, 9vw, 3.2rem);
+        line-height: 1.1;
+        margin-top: 22px;
+    }
+
+    #letter .section-title span {
+        margin-top: 8px;
+    }
+
+    #letter .section-description {
+        width: 100%;
+        max-width: 500px;
+        padding: 0 5px;
+        margin-top: 20px;
+        font-size: 0.98rem;
+        line-height: 1.7;
+    }
+
+    /* ================================
+       LETTER WRAPPER
+    ================================= */
+
+    .letter-wrapper {
+        width: 100%;
+        min-height: 430px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 0;
+        position: relative;
+        margin-top: 25px;
+    }
+
+    /* ================================
+       TEDDY
+    ================================= */
+
+    .letter-teddy-box {
+        position: absolute;
+
+        left: auto;
+        right: -5px;
+
+        bottom: 5px;
+
+        transform: none;
+
+        z-index: 50;
+    }
+
+    .letter-teddy {
+        width: 125px;
+        max-width: 125px;
+    }
+
+    .letter-teddy-box .teddy-glow {
+        inset: 15px;
+        filter: blur(30px);
+    }
+
+    /* ================================
+       ENVELOPE
+    ================================= */
+
+    .envelope {
+        width: min(86vw, 340px);
+        height: auto;
+        aspect-ratio: 420 / 290;
+
+        flex-shrink: 0;
+
+        transform: none;
+
+        margin: 0 auto;
+    }
+
+    .envelope:hover {
+        transform: none;
+    }
+
+    /* ================================
+       ENVELOPE FRONT / FOLDS
+    ================================= */
+
+    .envelope-front,
+    .fold-left,
+    .fold-right {
+        height: 62%;
+    }
+
+    /* ================================
+       TOP FLAP
+    ================================= */
+
+    .envelope-flap {
+        height: 59%;
+    }
+
+    /* ================================
+       LETTER PAPER
+    ================================= */
+
+    .letter-paper {
+        width: 81%;
+        height: 72%;
+
+        left: 50%;
+        bottom: 8%;
+
+        border-radius: 13px;
+    }
+
+    /* ================================
+       PAPER CONTENT
+    ================================= */
+
+    .paper-content {
+        padding: 15px 14px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .paper-content h3 {
+        font-size: 1.25rem;
+        line-height: 1.25;
+        margin-bottom: 12px;
+    }
+
+    .paper-content p {
+        font-size: 0.82rem;
+        line-height: 1.65;
+    }
+
+    .paper-content span {
+        margin-top: 18px;
+        font-size: 0.85rem;
+    }
+
+    /* ================================
+       WAX SEAL
+    ================================= */
+
+    .wax-seal {
+        width: 52px;
+        height: 52px;
+
+        bottom: 36%;
+
+        font-size: 1.15rem;
+
+        border-width: 3px;
+    }
+
+    /* ================================
+       OPEN LETTER ANIMATION
+    ================================= */
+
+    .envelope.open .letter-paper {
+        animation: letterSlideMobile .9s ease forwards;
+    }
+
+    @keyframes letterSlideMobile {
+
+        0% {
+            transform:
+                translateX(-50%)
+                translateY(0);
+        }
+
+        100% {
+            transform:
+                translateX(-50%)
+                translateY(-105px);
+        }
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    #letter {
+        padding: 75px 0 100px;
+    }
+
+    #letter .section-header {
+        padding: 0 15px;
+    }
+
+    #letter .section-badge {
+        padding: 9px 15px;
+        font-size: 0.78rem;
+    }
+
+    #letter .section-title {
+        font-size: clamp(2rem, 10vw, 2.7rem);
+    }
+
+    #letter .section-description {
+        font-size: 0.92rem;
+        line-height: 1.65;
+    }
+
+    /* ================================
+       WRAPPER
+    ================================= */
+
+    .letter-wrapper {
+        min-height: 370px;
+        margin-top: 15px;
+    }
+
+    /* ================================
+       ENVELOPE
+    ================================= */
+
+    .envelope {
+        width: min(88vw, 300px);
+        aspect-ratio: 420 / 290;
+    }
+
+    /* ================================
+       TEDDY
+    ================================= */
+
+    .letter-teddy-box {
+        right: -2px;
+        bottom: 0;
+    }
+
+    .letter-teddy {
+        width: 105px;
+        max-width: 105px;
+    }
+
+    /* ================================
+       PAPER
+    ================================= */
+
+    .letter-paper {
+        width: 80%;
+        height: 72%;
+
+        border-radius: 11px;
+    }
+
+    .paper-content {
+        padding: 12px 11px;
+    }
+
+    .paper-content h3 {
+        font-size: 1.05rem;
+        margin-bottom: 8px;
+    }
+
+    .paper-content p {
+        font-size: 0.72rem;
+        line-height: 1.55;
+    }
+
+    .paper-content span {
+        font-size: 0.75rem;
+        margin-top: 12px;
+    }
+
+    /* ================================
+       WAX SEAL
+    ================================= */
+
+    .wax-seal {
+        width: 46px;
+        height: 46px;
+
+        bottom: 35%;
+
+        font-size: 1rem;
+    }
+
+    /* ================================
+       OPEN ANIMATION
+    ================================= */
+
+    .envelope.open .letter-paper {
+        animation: letterSlideSmallMobile .9s ease forwards;
+    }
+
+    @keyframes letterSlideSmallMobile {
+
+        0% {
+            transform:
+                translateX(-50%)
+                translateY(0);
+        }
+
+        100% {
+            transform:
+                translateX(-50%)
+                translateY(-85px);
+        }
+
+    }
+
+}
